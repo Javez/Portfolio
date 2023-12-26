@@ -1,18 +1,39 @@
 <template>
   <div class="home">
+    <img alt="Porfolio logo" src="./assets/logo.png" />
     <h1>Welcome to My Portfolio</h1>
-    <!-- Add more content here -->
+    <Navbar />
+    <Sidebar />
+    <GreetingSection />
+    <TechSection />
+    <AboutPortfolioSection />
+    <PortfolioRedirectSection />
+    <GameSection />
+    <Footer />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'home-page',
-}
-</script>
+import Navbar from "../components/Navbar.vue";
+import Sidebar from "../components/Sidebar.vue";
+import GreetingSection from "../components/GreetingSection.vue";
+import TechSection from "../components/TechSection.vue";
+import AboutPortfolioSection from "../components/AboutPorfolioSection.vue";
+import PortfolioRedirectSection from "../components/PortfolioRedirectSection.vue";
+import GameSection from "../components/GameSection.vue";
+import Footer from "../components/Footer.vue";
 
-<style scoped>
-.home {
-  text-align: center;
-}
-</style>
+export default {
+  name: "home-page",
+  components: {
+    Navbar,
+    Sidebar,
+    GreetingSection,
+    TechSection,
+    AboutPortfolioSection,
+    PortfolioRedirectSection,
+    GameSection,
+    Footer,
+  },
+};
+</script>
