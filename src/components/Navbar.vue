@@ -1,8 +1,22 @@
 <template>
     <nav>
-        <section><p>Logo</p></section>
-        <section><p>Links</p></section>
-        <section><p>Profile</p></section>
+        <section class="logo-section"><img alt="Porfolio logo" src="../assets/logo.png" /></section>
+        <section>
+          <ul>
+            <li>About Me</li>
+            <li>Skills</li>
+            <li>Recent Projects</li>
+            <li>Experience</li>
+            <li>Donate</li>
+          </ul>
+        </section>
+        <section>
+          <div>Light/Dark Icon</div>
+          <div>Language Icon</div>
+        </section>
+        <section>
+          <p>Profile</p>
+        </section>
     </nav>
 </template>
 
@@ -12,3 +26,7 @@ export default {
   name: "navbar-component",
 };
 </script>
+
+<style>
+
+</style>

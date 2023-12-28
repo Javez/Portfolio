@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Porfolio logo" src="../assets/logo.png" />
     <h1>Welcome to My Portfolio</h1>
     <Navbar />
     <Sidebar />
