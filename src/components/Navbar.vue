@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <section class="logo-section"><img alt="Porfolio logo" src="../assets/logo.png" /></section>
+        <section class="nav-logo-section"><img class="nav-logo-img" alt="Porfolio logo" src="../assets/logo.png" /></section>
         <section>
           <ul>
             <li>About Me</li>
@@ -28,5 +28,8 @@ export default {
 </script>
 
 <style>
-
+  .nav-logo-img {
+    width: 40px;
+    height: 40px;
+  }
 </style>
