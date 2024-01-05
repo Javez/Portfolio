@@ -76,7 +76,7 @@
   .chapter-four{
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    background-color: rgb(93, 1, 121);
   }
   .chapter-five {
     height: 100vh;
