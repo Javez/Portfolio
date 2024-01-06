@@ -3,6 +3,7 @@ import App from "./App.vue";
 
 // Vuetify
 import "vuetify/styles";
+import colors from "vuetify/util/colors";
 import "@mdi/font/css/materialdesignicons.css";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
@@ -15,7 +16,9 @@ const vuetify = createVuetify({
     themes: {
       light: {
         dark: true,
-        colors: {},
+        colors: {
+          background: colors.grey.lighten5,
+        },
       },
     },
   },

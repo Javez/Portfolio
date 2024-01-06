@@ -1,17 +1,17 @@
 <template>
-  <v-toolbar class="v-toolbar">
-    <section class="v-toolbar--logo">
-      <img class="v-toolbar--logo_img" alt="Porfolio logo" src="../assets/logo.png" />
+  <v-toolbar class="v-toolbar rounded" color="rgba(0, 0, 0, 0.2)">
+    <section class="v-toolbar-logo" >
+      <img class="v-toolbar-logo_img" alt="Porfolio logo" src="../assets/logo.png" />
     </section>
-    <section class="v-toolbar-title"><h1>Porfolio</h1></section>
-    <div class="v-toolbar-spacer">Space</div>
+    <section class="v-toolbar-title d-inline-flex"><h1>Porfolio</h1></section>
+    <div class="v-toolbar-spacer"></div>
     <nav class="v-toolbar-items">
       <ul>
         <v-btn variant="plain">About Me</v-btn>
-        <v-btn elevation="10">Skills</v-btn>
-        <v-btn>Recent Projects</v-btn>
-        <v-btn>Experience</v-btn>
-        <v-btn>Support</v-btn>
+        <v-btn variant="plain" elevation="10">Skills</v-btn>
+        <v-btn variant="plain">Recent Projects</v-btn>
+        <v-btn variant="plain">Experience</v-btn>
+        <v-btn variant="plain">Support</v-btn>
       </ul>
     </nav>
     <section class="v-toolbar-icons">
@@ -33,12 +33,23 @@ export default {
 </script>
 
 <style>
-  .v-toolbar {
-   
-    color: red
+  .v-toolbar-logo_img {
+    display: inherit;
+    align-items: center;
+    
+    margin: 0.5rem;
+    width: 3rem;
   }
-  .v-toolbar--logo_img {
-    width: 40px;
-    height: 40px;
+  .v-toolbar-title {
+    display: inherit;
+    flex-grow: 0;
+  }
+  .v-toolbar-spacer {
+    display: inherit;
+    flex-grow: 1;
+  }
+  .v-toolbar-items {
+    display: inherit;
+    align-items: center;
   }
 </style>
