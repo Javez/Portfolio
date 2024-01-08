@@ -1,55 +1,91 @@
 <template>
-  <v-toolbar class="v-toolbar rounded" color="rgba(0, 0, 0, 0.2)">
-    <section class="v-toolbar-logo" >
-      <img class="v-toolbar-logo_img" alt="Porfolio logo" src="../assets/logo.png" />
+  <v-toolbar class="v-toolbar rounded">
+    <section class="v-toolbar-logo">
+      <img
+        class="v-toolbar-logo_img"
+        alt="Porfolio logo"
+        src="../assets/logo.png"
+      />
     </section>
-    <section class="v-toolbar-title d-inline-flex"><h1>Porfolio</h1></section>
+    <section class=""><h1>Resume</h1></section>
     <div class="v-toolbar-spacer"></div>
     <nav class="v-toolbar-items">
-      <ul>
+      <ul v-if="showToolbarItems">
         <v-btn variant="plain">About Me</v-btn>
-        <v-btn variant="plain" elevation="10">Skills</v-btn>
-        <v-btn variant="plain">Recent Projects</v-btn>
+        <v-btn variant="plain">Skills</v-btn>
+        <v-btn variant="plain">Portfolio</v-btn>
         <v-btn variant="plain">Experience</v-btn>
         <v-btn variant="plain">Support</v-btn>
       </ul>
     </nav>
     <section class="v-toolbar-icons">
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-btn icon="mdi-brightness-4"></v-btn>
-      <v-btn icon="mdi-web"></v-btn>
-      
+      <v-app-bar-nav-icon @click="toggleToolbar" class="v-toolbar-icons_item"></v-app-bar-nav-icon>
+      <v-btn class="v-toolbar-icons_item" icon="mdi-brightness-4"></v-btn>
+      <v-btn class="v-toolbar-icons_item" icon="mdi-web"></v-btn>
     </section>
     <v-tooltip activator="parent" location="bottom">
       Made with Vue.js
     </v-tooltip>
-  </v-toolbar>
+  </v-toolbar>   
+  <Sidebar v-if="showToolbarItems"></Sidebar>
 </template>
 
 <script>
+import Sidebar from "./Sidebar.vue";
+
 export default {
   name: "navbar-component",
+  components: {
+    Sidebar,
+  },
+  data() {
+    return {
+      showToolbarItems: true,
+    };
+  },
+  methods: {
+    toggleToolbar() {
+      this.showToolbarItems = !this.showToolbarItems;
+    },
+  },
 };
 </script>
 
 <style>
-  .v-toolbar-logo_img {
-    display: inherit;
-    align-items: center;
-    
-    margin: 0.5rem;
-    width: 3rem;
-  }
-  .v-toolbar-title {
-    display: inherit;
-    flex-grow: 0;
-  }
-  .v-toolbar-spacer {
-    display: inherit;
-    flex-grow: 1;
-  }
-  .v-toolbar-items {
-    display: inherit;
-    align-items: center;
-  }
+.v-toolbar {
+  display: flex;
+  position: absolute;
+}
+.v-toolbar-logo_img {
+  display: inherit;
+  align-items: center;
+  margin: 0.5rem;
+  width: 3rem;
+}
+.v-toolbar-icons_item {
+  display: inherit;
+  align-items: center;
+  margin: 0.5rem;
+  width: 3rem;
+}
+.v-toolbar-title {
+  display: inherit;
+}
+.v-toolbar-spacer {
+  display: inherit;
+  flex-grow: 1;
+}
+.v-toolbar-items {
+  display: inherit;
+  align-items: center;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: max-height 0.3s ease;
+}
+
+.v-enter,
+.v-leave-to {
+  max-height: 0; 
+}
 </style>
