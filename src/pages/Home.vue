@@ -4,7 +4,7 @@
       <img
         class="bg-img-one"
         :style="{
-           transform: `translate(-${translateX}px, -${translateY}px)`,
+          transform: `translate(-${translateX}px, -${translateY}px)`,
         }"
         src="../assets/triangle-bg-one.png"
         alt=""
@@ -12,7 +12,7 @@
       <img
         class="bg-img-two"
         :style="{
-             transform: `translate(${translateX}px, ${translateY}px)`,
+          transform: `translate(${translateX}px, ${translateY}px)`,
         }"
         src="../assets/triangle-bg-two.png"
         alt=""
@@ -22,16 +22,25 @@
       <GreetingSection />
     </section>
     <section class="chapter-two">
-      <TechSection />
+      <AboutMe />
     </section>
     <section class="chapter-three">
+      <SkillsSection />
+    </section>
+    <section class="chapter-four">
+      <ExperienceSection />
+    </section>
+    <section class="chapter-five">
+      <EducationSection />
+    </section>
+    <section class="chapter-six">
       <AboutPortfolioSection />
       <PortfolioRedirectSection />
     </section>
-    <section class="chapter-four">
+    <section class="chapter-seven">
       <GameSection />
     </section>
-    <section class="chapter-five">
+    <section class="chapter-eight">
       <Footer />
     </section>
   </div>
@@ -40,7 +49,10 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 import GreetingSection from "../components/GreetingSection.vue";
-import TechSection from "../components/TechSection.vue";
+import AboutMe from "../components/AboutMe.vue";
+import SkillsSection from "../components/SkillsSection.vue";
+import ExperienceSection from "../components/ExperienceSection.vue";
+import EducationSection from "../components/EducationSection.vue";
 import AboutPortfolioSection from "../components/AboutPorfolioSection.vue";
 import PortfolioRedirectSection from "../components/PortfolioRedirectSection.vue";
 import GameSection from "../components/GameSection.vue";
@@ -57,7 +69,10 @@ export default {
   components: {
     Navbar,
     GreetingSection,
-    TechSection,
+    AboutMe,
+    SkillsSection,
+    ExperienceSection,
+    EducationSection,
     AboutPortfolioSection,
     PortfolioRedirectSection,
     GameSection,
@@ -87,10 +102,9 @@ export default {
 .bg-img-two {
   display: block;
   position: absolute;
-  object-fit: fill;
+  width: calc(100vw - 2rem);
+  height: 68rem;
   z-index: 0;
-  max-width: 100%;
-  max-height: 100%;
 }
 .chapter-one {
   height: 70rem;
@@ -101,21 +115,73 @@ export default {
 .chapter-two {
   height: 70rem;
   width: 100vw;
-  background-color: green;
+  background-color: rgb(163, 163, 163);
 }
 .chapter-three {
   height: 70rem;
   width: 100vw;
-  background-color: red;
+  background-color: rgb(55, 55, 55);
 }
 .chapter-four {
   height: 70rem;
   width: 100vw;
-  background-color: rgb(93, 1, 121);
+  background-color: rgb(190, 190, 190);
 }
 .chapter-five {
   height: 70rem;
   width: 100vw;
-  background-color: white;
+  background-color: rgb(67, 67, 67);
+}
+.chapter-six {
+  height: 70rem;
+  width: 100vw;
+  background-color: rgb(190, 190, 190);
+}
+.chapter-seven {
+  height: 70rem;
+  width: 100vw;
+  background-color: rgb(73, 72, 72);
+}
+.chapter-eight {
+  height: 70rem;
+  width: 100vw;
+  background-color: rgb(190, 190, 190);
+}
+
+@media (min-width: 0px) {
+  .chapter-one {
+    height: 55rem;
+  }
+  .bg-img-one,
+  .bg-img-two {
+    height: 52rem;
+  }
+}
+@media (min-width: 640px) {
+  .chapter-one {
+    height: 60rem;
+  }
+  .bg-img-one,
+  .bg-img-two {
+    height: 58rem;
+  }
+}
+@media (min-width: 960px) {
+  .chapter-one {
+    height: 65rem;
+  }
+  .bg-img-one,
+  .bg-img-two {
+    height: 62rem;
+  }
+}
+@media (min-width: 1100px) {
+  .chapter-one {
+    height: 70rem;
+  }
+  .bg-img-one,
+  .bg-img-two {
+    height: 68rem;
+  }
 }
 </style>

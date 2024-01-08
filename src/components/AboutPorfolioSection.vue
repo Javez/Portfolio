@@ -1,6 +1,8 @@
 <template>
     <section>
-        <p>This is section about portfolio</p>
+        <h1>This is section about portfolio</h1>
+        <p>Portfolio is fullstack Next and Nest app which contain my recent projects</p>
+        <p>Projects has their own </p>
     </section>
 </template>
 
