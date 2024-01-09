@@ -1,8 +1,14 @@
 <template>
+  <v-lazy
+    :min-height="200"
+    :options="{ threshold: 0.5 }"
+    transition="fade-transition"
+  >
   <section class="greeting-section" z-index="1">
     <h1 class="greeting-section_h1">Glad to see you on my page</h1>
     <h3 class="greeting-section_h3">Im a full stack web developer</h3>
   </section>
+  </v-lazy>
 </template>
 
 <script>
@@ -18,17 +24,21 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 60rem;
   z-index: 10;
 }
 
 .greeting-section_h1 {
+  display: inherit;
+  text-align: center;
   font-size: 4rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
+
 }
 
 .greeting-section_h3 {
+  display: inherit;
+  text-align: center;
   font-size: 3rem;
   padding-top: 5rem;
   padding-bottom: 5rem;

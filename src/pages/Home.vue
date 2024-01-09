@@ -17,7 +17,7 @@
         src="../assets/triangle-bg-two.png"
         alt=""
       />
-      <Navbar />
+      <Navbar/>
       <Sidebar />
       <GreetingSection />
     </section>

@@ -1,15 +1,14 @@
 <template>
-  <Home msg="Welcome to Your Vue.js App"/>
+  <Home msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-
-import Home from './pages/Home.vue'
+import Home from "./pages/Home.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Home
+    Home,
   },
   methods: {
     handleMouseMove(event) {
@@ -18,17 +17,32 @@ export default {
       this.translateX = (mouseX / containerWidth) * 20;
     },
   },
-}
+};
 </script>
 
 <style>
 @import "../src/assets/styles/base.css";
 @import "../src/assets/styles/typography.css";
 
-@media (min-width: 0px) { body {font-size:1rem;} }
-@media (min-width: 640px) { body {font-size:1rem;} }
-@media (min-width:960px) { body {font-size:1.2rem;} }
-@media (min-width:1100px) { body {font-size:1.5rem;} }
+@media (min-width: 0px) {
+  body {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 960px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1100px) {
+  body {
+    font-size: 1.5rem;
+  }
+}
 
-@media (max-width: 960px) { .sidebar { visibility: visible;} .v-toolbar-items { display: none !important; } }
 </style>
