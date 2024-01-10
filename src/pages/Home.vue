@@ -143,7 +143,6 @@ export default {
   background-color: rgb(73, 72, 72);
 }
 .chapter-eight {
-  height: 70rem;
   width: 100vw;
   background-color: rgb(190, 190, 190);
 }

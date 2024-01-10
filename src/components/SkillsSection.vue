@@ -1,4 +1,17 @@
 <template>
+   <v-card
+    class="mx-auto"
+    width="400"
+    prepend-icon="mdi-home"
+  >
+    <template v-slot:title>
+      This is a title
+    </template>
+
+    <v-card-text>
+      This is content
+    </v-card-text>
+  </v-card>
   <section>
        <h1>Skill section</h1>
     <div>
@@ -27,6 +40,9 @@
       <h2>Cloud section</h2>
       <p>AWS, GCP, Firebase</p>
     </div>
+    <template>
+ 
+</template>
   </section>
 </template>
 
