@@ -1,6 +1,5 @@
 <template>
   <v-lazy
-    :min-height="200"
     :options="{ threshold: 0.5 }"
     transition="fade-transition"
   >
@@ -16,10 +15,10 @@
       <div class="v-toolbar-spacer"></div>
       <nav class="v-toolbar-items">
         <ul v-if="showToolbarItems">
-          <v-btn variant="plain">About Me</v-btn>
-          <v-btn variant="plain">Skills</v-btn>
-          <v-btn variant="plain">Portfolio</v-btn>
-          <v-btn variant="plain">Experience</v-btn>
+          <v-btn variant="plain" href="#about-me">About Me</v-btn>
+          <v-btn variant="plain" href="#skills">Skills</v-btn>
+          <v-btn variant="plain" href="#portfolio">Portfolio</v-btn>
+          <v-btn variant="plain" href="#experience">Experience</v-btn>
           <v-btn variant="plain">Support</v-btn>
         </ul>
       </nav>
@@ -29,7 +28,7 @@
           @click.stop="drawer = !drawer"
           class="v-toolbar-buttons_item"
         ></v-app-bar-nav-icon>
-        <v-btn class="v-toolbar-buttons_item" icon="mdi-brightness-4"></v-btn>
+        <v-btn class="v-toolbar-buttons_item" icon="mdi-brightness-4" @click="toggleTheme"></v-btn>
         <v-btn class="v-toolbar-buttons_item" icon="mdi-web"></v-btn>
       </section>
       <v-card class="v-toolbar-card">
@@ -47,6 +46,7 @@
 </template>
 
 <script>
+
 export default {
   name: "navbar-component",
   data() {
@@ -76,13 +76,9 @@ export default {
           value: "Support",
         },
       ],
-      watch: {
-        group() {
-          this.drawer = false;
-        },
-      },
     };
   },
+   
   methods: {
     toggleToolbar() {
       this.showToolbarItems = !this.showToolbarItems;

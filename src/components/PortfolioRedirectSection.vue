@@ -1,6 +1,6 @@
 <template>
     <section>
-        <a href="#">Redirect link to my project holder app</a>
+        <v-btn>Open my Portfolio</v-btn>
     </section>
 </template>
 

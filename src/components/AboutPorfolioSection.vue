@@ -4,7 +4,7 @@
     :options="{ threshold: 0.5 }"
     transition="fade-transition"
   >
-    <section>
+    <section id="portfolio">
         <h1>This is section about portfolio</h1>
         <p>Portfolio is fullstack Next and Nest app which contain my recent projects</p>
         <p>Projects has their own </p>

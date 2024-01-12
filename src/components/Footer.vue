@@ -47,11 +47,9 @@ export default {
 
 <style>
 .v-application__wrap {
-  /* Your custom styles here */
   background-color: #f0f0f0 !important;
   height: 100px !important;
   min-height: auto !important;
   max-height: auto !important;
-  /* Add any other styles you want to apply */
 }
 </style>

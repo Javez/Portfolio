@@ -18,7 +18,6 @@
         alt=""
       />
       <Navbar/>
-      <Sidebar />
       <GreetingSection />
     </section>
     <section class="chapter-two">
@@ -110,41 +109,34 @@ export default {
   height: 70rem;
   width: 100vw;
   padding: 1rem;
-  background-color: rgb(51, 51, 51);
 }
 .chapter-two {
-  height: 70rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
-  background-color: rgb(163, 163, 163);
 }
 .chapter-three {
-  height: 70rem;
   width: 100vw;
-  background-color: rgb(55, 55, 55);
 }
 .chapter-four {
   height: 70rem;
   width: 100vw;
-  background-color: rgb(190, 190, 190);
 }
 .chapter-five {
   height: 70rem;
   width: 100vw;
-  background-color: rgb(67, 67, 67);
 }
 .chapter-six {
   height: 70rem;
   width: 100vw;
-  background-color: rgb(190, 190, 190);
 }
 .chapter-seven {
   height: 70rem;
   width: 100vw;
-  background-color: rgb(73, 72, 72);
 }
 .chapter-eight {
   width: 100vw;
-  background-color: rgb(190, 190, 190);
 }
 
 @media (min-width: 0px) {
