@@ -1,6 +1,5 @@
 <template>
-  <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
-    <v-app>
+  <v-app>
       <v-footer class="bg-grey-lighten-1">
         <v-col>
           <v-row justify="center" no-gutters>
@@ -32,7 +31,6 @@
         </v-col>
       </v-footer>
     </v-app>
-  </v-lazy>
 </template>
 
 <script>

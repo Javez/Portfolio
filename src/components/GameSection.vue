@@ -5,7 +5,7 @@
     transition="fade-transition"
   >
     <nav>
-        <section><p>Game</p></section>
+        <section><p>Game</p>Thank you for being a part of this journey.</section>
     </nav>
     </v-lazy>
 </template>

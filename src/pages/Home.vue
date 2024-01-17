@@ -4,20 +4,23 @@
       <img
         class="bg-img-one"
         :style="{
-          transform: `translate(-${translateX}px, -${translateY}px)`,
+          transform: `translate(${translateX}px, ${translateY}px)`,
         }"
-        src="../assets/triangle-bg-one.png"
-        alt=""
+        alt="Responsive Background"
+        src="../assets/greeting-section/bg-desktop-one.svg"
       />
       <img
         class="bg-img-two"
         :style="{
-          transform: `translate(${translateX}px, ${translateY}px)`,
+          transform: `translate(${-translateX}px, ${-translateY}px)`,
         }"
-        src="../assets/triangle-bg-two.png"
-        alt=""
+        alt="Responsive Background"
+        src="../assets/greeting-section/bg-desktop-two.svg"
       />
-      <Navbar/>
+      <div class="blurry-div bg-img-two">
+        <div class="blurry-div-content">This is a blurry div</div>
+      </div>
+      <Navbar />
       <GreetingSection />
     </section>
     <section class="chapter-two">
@@ -78,6 +81,9 @@ export default {
     Footer,
   },
   methods: {
+    updateImagePath() {
+      this.$forceUpdate();
+    },
     handleMouseMoveX(event) {
       const containerWidth = window.innerWidth;
       const containerHeight = window.innerHeight;
@@ -92,24 +98,25 @@ export default {
 </script>
 
 <style>
-.home {
-  display: block;
-  position: absolute;
-  z-index: 99;
+.chapter-one {
+  display: flex;
+  justify-content: center;
+  height: 60rem;
+  width: 100vw;
+  position: relative;
 }
 .bg-img-one,
 .bg-img-two {
   display: block;
   position: absolute;
-  width: calc(100vw - 2rem);
-  height: 68rem;
+  width: 100%;
+  height: 100%; /* Modify this line */
   z-index: 0;
+  top: 0; /* Add this line */
+  left: 0; /* Add this line */
+  object-fit: cover;
 }
-.chapter-one {
-  height: 70rem;
-  width: 100vw;
-  padding: 1rem;
-}
+
 .chapter-two {
   display: flex;
   align-items: center;
@@ -139,40 +146,21 @@ export default {
   width: 100vw;
 }
 
+.blurry-div {
+  background-color: rgba(223, 223, 223, 0.596);
+  filter: blur(100rem);
+}
+
 @media (min-width: 0px) {
-  .chapter-one {
-    height: 55rem;
-  }
-  .bg-img-one,
-  .bg-img-two {
-    height: 52rem;
-  }
+
 }
 @media (min-width: 640px) {
-  .chapter-one {
-    height: 60rem;
-  }
-  .bg-img-one,
-  .bg-img-two {
-    height: 58rem;
-  }
+
 }
 @media (min-width: 960px) {
-  .chapter-one {
-    height: 65rem;
-  }
-  .bg-img-one,
-  .bg-img-two {
-    height: 62rem;
-  }
+
 }
 @media (min-width: 1100px) {
-  .chapter-one {
-    height: 70rem;
-  }
-  .bg-img-one,
-  .bg-img-two {
-    height: 68rem;
-  }
+
 }
 </style>

@@ -7,75 +7,24 @@
           <v-sheet class="ma-2 pa-2">
             <h1>Programming language section</h1>
             <v-row>
-              <v-col>
-                <img
-                  style="width: 5rem; height: 5rem; border-radius: 0.2rem"
-                  class="d-flex justify-center align-center"
-                  alt="javascript logo"
-                  src="../assets/js-logo.png"
-                />
-                <p>Javascript</p>
-              </v-col>
-              <v-col>
-                <img
-                  style="
-                    position: relative;
-                    width: 5rem;
-                    height: 5rem;
-                    border-radius: 0.2rem;
-                    margin-top: 1rem;
-                    margin-left: 1rem;
-                    z-index: 10;
-                  "
-                  class="v-card-img"
-                  alt="typescript logo"
-                  src="../assets/ts-logo.png"
-                />
-                <p>Typescript</p>
-              </v-col>
-              <v-col class="d-flex flex-column justify-center align-center p-2">
+              <v-col
+                v-for="(language, index) in languages"
+                :key="index"
+                cols="12"
+                sm="6"
+                md="4"
+              >
                 <v-card class="d-flex flex-column justify-center align-center">
-                <img
-                  style="
-                    width: 5rem;
-                    height: 5rem;
-                    border-radius: 0.2rem;
-                  "
-                  class="v-card-img"
-                  alt="c sharp logo"
-                  src="../assets/c-sharp-logo.png"
-                />
-                <p>Typescript</p>
+                  <img
+                    style="width: 5rem; height: 5rem; border-radius: 0.2rem"
+                    class="v-card-img"
+                    :alt="language.name + ' logo'"
+                    :src="`logo`"
+                  />
+                  <p>{{ language.name }}</p>
                 </v-card>
               </v-col>
             </v-row>
-          </v-sheet>
-          <v-sheet class="ma-2 pa-2">
-            <h1>Frontend Frameworks section</h1>
-            <p>React, Redux, Next</p>
-            <p>Vue, Vuex, Nuxt</p>
-          </v-sheet>
-          <v-sheet class="ma-2 pa-2">
-            <h2>Backend Frameworks section</h2>
-            <p>Node, Nest, Express</p>
-          </v-sheet>
-          <v-sheet class="ma-2 pa-2">
-            <h2>Database section</h2>
-            <p>Sequelize, Mongoose</p>
-            <p>SQL: Mysql, Postgresql, Sqlite, MSSQL</p>
-            <p>NoSQL: Mongo</p>
-          </v-sheet>
-          <v-sheet class="ma-2 pa-2">
-            <h2>Cloud section</h2>
-            <p>AWS, GCP, Firebase</p>
-          </v-sheet>
-          <v-sheet class="ma-2 pa-2">
-            <h2>CSS section</h2>
-            <p>Bootstrap, SCSS, Tailwind, MaterialUI, Vuetify</p>
-          </v-sheet>
-          <v-sheet class="ma-2 pa-2">
-            <h2>Tech section</h2>
-            <p>REST, GraphQL, WebSockets, Subscriptions</p>
           </v-sheet>
         </v-col>
       </v-row>
@@ -85,22 +34,141 @@
 </template>
 
 <script>
+import jsLogo from "../assets/skills-section/js-logo.png"; 
+console.log(jsLogo)
 export default {
   name: "skills-component",
   data() {
     return {
-      languages: { javascript: {
-        name: "Javascript",
-        logo: "../assets/js-logo.png",
-
-      }} ["Javascript", "Typescript", "C#"],
-      frontendFrameworks: ["React", "Redux", "Next"],
-      backendFrameworks: ["Node", "Nest", "Express"],
-      orm: ["Sequelize", "Mongoose"],
-      databases: ["MySQL", "PostgreSQL", "SQLite", "MSSQL", "Mongo"],
-      cloud: ["AWS", "GCP", "Firebase"],
-      css: ["Bootstrap", "SCSS", "Tailwind", "MaterialUI", "Vuetify"],
-      tech: ["REST", "GraphQL", "WebSockets", "Subscriptions"],
+      logo: jsLogo,
+      languages: [
+        {
+          name: "Javascript",
+          logo: "@/src/assets/skills-section/js-logo.png",
+        },
+        {
+          name: "Typescript",
+          logo: "../assets/ts-logo.png",
+        },
+        {
+          name: "C#",
+          logo: "../assets/c-sharp-logo",
+        },
+      ],
+      frontendFrameworks: [
+        {
+          name: "React",
+          logo: "../assets/react-logo.png",
+        },
+        {
+          name: "Redux",
+          logo: "../assets/redux-logo.png",
+        },
+        {
+          name: "Next",
+          logo: "../assets/next-logo.png",
+        },
+      ],
+      backendFrameworks: [
+        {
+          name: "Node",
+          logo: "../assets/node-logo.png",
+        },
+        {
+          name: "Nest",
+          logo: "../assets/nest-logo.png",
+        },
+        {
+          name: "Express",
+          logo: "../assets/express-logo.png",
+        },
+      ],
+      orm: [
+        {
+          name: "Sequelize",
+          logo: "../assets/sequelize-logo.png",
+        },
+        {
+          name: "Mongoose",
+          logo: "../assets/mongoose-logo.png",
+        },
+      ],
+      databases: [
+        {
+          name: "MySQL",
+          logo: "../assets/mysql-logo.png",
+        },
+        {
+          name: "PostgreSQL",
+          logo: "../assets/postgresql-logo.png",
+        },
+        {
+          name: "SQLite",
+          logo: "../assets/sqlite-logo.png",
+        },
+        {
+          name: "MSSQL",
+          logo: "../assets/mssql-logo.png",
+        },
+        {
+          name: "Mongo",
+          logo: "../assets/mongo-logo.png",
+        },
+      ],
+      cloud: [
+        {
+          name: "AWS",
+          logo: "../assets/aws-logo.png",
+        },
+        {
+          name: "GCP",
+          logo: "../assets/gcp-logo.png",
+        },
+        {
+          name: "Firebase",
+          logo: "../assets/firebase-logo.png",
+        },
+      ],
+      css: [
+        {
+          name: "Bootstrap",
+          logo: "../assets/bootstrap-logo.png",
+        },
+        {
+          name: "SaSS",
+          logo: "../assets/sass-logo.png",
+        },
+        {
+          name: "Tailwind",
+          logo: "../assets/tailwind-logo.png",
+        },
+        {
+          name: "MaterialUI",
+          logo: "../assets/materialui-logo.png",
+        },
+        {
+          name: "Vuetify",
+          logo: "../assets/vuetify-logo.png",
+        },
+      ],
+      tech: [
+        {
+          name: "REST",
+          logo: "../assets/rest-logo.png",
+        },
+        {
+          name: "GraphQL",
+          logo: "../assets/graphql-logo.png",
+        },
+        {
+          name: "WebSockets",
+          logo: "../assets/websockets-logo.png",
+        },
+        {
+          name: "Subscriptions",
+          logo: "../assets/subscriptions-logo.png",
+        },
+      ],
     };
   },
 };
