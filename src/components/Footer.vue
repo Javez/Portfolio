@@ -1,6 +1,6 @@
 <template>
   <v-app>
-      <v-footer class="bg-grey-lighten-1">
+      <v-footer class="footer">
         <v-col>
           <v-row justify="center" no-gutters>
             <v-btn
@@ -15,7 +15,6 @@
             <v-btn
               v-for="link in links"
               :key="link"
-              color="white"
               variant="text"
               class="mx-2"
             >
@@ -44,8 +43,11 @@ export default {
 </script>
 
 <style>
+.footer {
+  border-top: 0.2rem solid black !important;
+}
 .v-application__wrap {
-  background-color: #f0f0f0 !important;
+  background-color: #00000000 !important;
   height: 100px !important;
   min-height: auto !important;
   max-height: auto !important;

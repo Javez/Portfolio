@@ -1,31 +1,39 @@
 <template>
   <section>
-    <v-container class="bg-surface-variant" id="skills">
-      <h1>Skills section</h1>
+    <v-divider :thickness="3" class="border-opacity-25 ma-5"></v-divider>
+    <v-container id="skills">
+      <v-card class="d-flex justify-center ma-3">
+        <h1>Skills section</h1></v-card
+      >
       <v-row no-gutters>
         <v-col cols="12" sm="12">
-          <v-sheet class="ma-2 pa-2">
-            <h1>Programming language section</h1>
-            <v-row>
-              <v-col
-                v-for="(language, index) in languages"
-                :key="index"
+          <v-col v-for="(skillGroup, index) in skills" :key="index">
+            <div>
+              <h1 class="d-flex justify-center">{{ skillGroup.name }}</h1>
+            </div>
+            <div class="skills-card-items d-flex ga-4">
+              <v-card
+                v-for="(data, dataIndex) in skillGroup.skills"
+                :key="dataIndex"
                 cols="12"
-                sm="6"
-                md="4"
+                class="d-flex flex-column justify-center align-center"
+                style="flex: 2 1 auto; flex-wrap: wrap"
               >
-                <v-card class="d-flex flex-column justify-center align-center">
-                  <img
-                    style="width: 5rem; height: 5rem; border-radius: 0.2rem"
-                    class="v-card-img"
-                    :alt="language.name + ' logo'"
-                    :src="`logo`"
-                  />
-                  <p>{{ language.name }}</p>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-sheet>
+                <img
+                  style="
+                    width: 5rem;
+                    height: 5rem;
+                    border: 2px solid black;
+                    border-radius: 0.4rem;
+                  "
+                  class="v-card-img ma-2"
+                  :alt="data.name + ' logo'"
+                  :src="data.logo"
+                />
+                <p>{{ data.name }}</p>
+              </v-card>
+            </div>
+          </v-col>
         </v-col>
       </v-row>
     </v-container>
@@ -34,142 +42,209 @@
 </template>
 
 <script>
-import jsLogo from "../assets/skills-section/js-logo.png"; 
-console.log(jsLogo)
+import jsLogo from "../assets/skills-section/js-logo.png";
+import tsLogo from "../assets/skills-section/ts-logo.png";
+import cSharpLogo from "../assets/skills-section/c-sharp-logo.png";
+import reactLogo from "../assets/skills-section/react-logo.png";
+import reduxLogo from "../assets/skills-section/redux-logo.png";
+import nextLogo from "../assets/skills-section/next-logo.png";
+import nodeLogo from "../assets/skills-section/node-logo.png";
+import nestLogo from "../assets/skills-section/nest-logo.png";
+import expressLogo from "../assets/skills-section/express-logo.png";
+import sequelizeLogo from "../assets/skills-section/sequelize-logo.png";
+import mongooseLogo from "../assets/skills-section/mongoose-logo.png";
+import mysqlLogo from "../assets/skills-section/mysql-logo.png";
+import postgresqlLogo from "../assets/skills-section/postgresql-logo.png";
+import sqliteLogo from "../assets/skills-section/sqlite-logo.png";
+import mssqlLogo from "../assets/skills-section/mssql-logo.png";
+import mongoLogo from "../assets/skills-section/mongo-logo.png";
+import awsLogo from "../assets/skills-section/aws-logo.png";
+import gcpLogo from "../assets/skills-section/gcp-logo.png";
+import firebaseLogo from "../assets/skills-section/firebase-logo.png";
+import bootsrapLogo from "../assets/skills-section/bootstrap-logo.png";
+import sassLogo from "../assets/skills-section/sass-logo.png";
+import tailwindLogo from "../assets/skills-section/tailwind-css-logo.png";
+import materialuiLogo from "../assets/skills-section/material-ui-logo.png";
+import vuetifyLogo from "../assets/skills-section/vuetify-logo.png";
+import restLogo from "../assets/skills-section/rest-logo.png";
+import graphqlLogo from "../assets/skills-section/graphql-logo.png";
+import websocketsLogo from "../assets/skills-section/web-sockets-logo.png";
+import subscriptionsLogo from "../assets/skills-section/subscriptions-logo.png";
+
 export default {
   name: "skills-component",
   data() {
     return {
-      logo: jsLogo,
-      languages: [
+      skills: [
         {
-          name: "Javascript",
-          logo: "@/src/assets/skills-section/js-logo.png",
+          name: "Programming languages",
+          skills: [
+            {
+              name: "Javascript",
+              logo: jsLogo,
+            },
+            {
+              name: "Typescript",
+              logo: tsLogo,
+            },
+            {
+              name: "C#",
+              logo: cSharpLogo,
+            },
+          ],
         },
         {
-          name: "Typescript",
-          logo: "../assets/ts-logo.png",
+          name: "Frontend Frameworks",
+          skills: [
+            {
+              name: "React",
+              logo: reactLogo,
+            },
+            {
+              name: "Redux",
+              logo: reduxLogo,
+            },
+            {
+              name: "Next",
+              logo: nextLogo,
+            },
+          ],
         },
         {
-          name: "C#",
-          logo: "../assets/c-sharp-logo",
-        },
-      ],
-      frontendFrameworks: [
-        {
-          name: "React",
-          logo: "../assets/react-logo.png",
-        },
-        {
-          name: "Redux",
-          logo: "../assets/redux-logo.png",
-        },
-        {
-          name: "Next",
-          logo: "../assets/next-logo.png",
-        },
-      ],
-      backendFrameworks: [
-        {
-          name: "Node",
-          logo: "../assets/node-logo.png",
+          name: "Backend Frameworks",
+          skills: [
+            {
+              name: "Node",
+              logo: nodeLogo,
+            },
+            {
+              name: "Nest",
+              logo: nestLogo,
+            },
+            {
+              name: "Express",
+              logo: expressLogo,
+            },
+          ],
         },
         {
-          name: "Nest",
-          logo: "../assets/nest-logo.png",
+          name: "ORM",
+          skills: [
+            {
+              name: "Sequelize",
+              logo: sequelizeLogo,
+            },
+            {
+              name: "Mongoose",
+              logo: mongooseLogo,
+            },
+          ],
         },
         {
-          name: "Express",
-          logo: "../assets/express-logo.png",
+          name: "Databases",
+          skills: [
+            {
+              name: "MySQL",
+              logo: mysqlLogo,
+            },
+            {
+              name: "PostgreSQL",
+              logo: postgresqlLogo,
+            },
+            {
+              name: "SQLite",
+              logo: sqliteLogo,
+            },
+            {
+              name: "MSSQL",
+              logo: mssqlLogo,
+            },
+            {
+              name: "Mongo",
+              logo: mongoLogo,
+            },
+          ],
         },
-      ],
-      orm: [
+
         {
-          name: "Sequelize",
-          logo: "../assets/sequelize-logo.png",
-        },
-        {
-          name: "Mongoose",
-          logo: "../assets/mongoose-logo.png",
-        },
-      ],
-      databases: [
-        {
-          name: "MySQL",
-          logo: "../assets/mysql-logo.png",
-        },
-        {
-          name: "PostgreSQL",
-          logo: "../assets/postgresql-logo.png",
-        },
-        {
-          name: "SQLite",
-          logo: "../assets/sqlite-logo.png",
-        },
-        {
-          name: "MSSQL",
-          logo: "../assets/mssql-logo.png",
-        },
-        {
-          name: "Mongo",
-          logo: "../assets/mongo-logo.png",
-        },
-      ],
-      cloud: [
-        {
-          name: "AWS",
-          logo: "../assets/aws-logo.png",
-        },
-        {
-          name: "GCP",
-          logo: "../assets/gcp-logo.png",
+          name: "Cloud services",
+          skills: [
+            {
+              name: "AWS",
+              logo: awsLogo,
+            },
+            {
+              name: "GCP",
+              logo: gcpLogo,
+            },
+            {
+              name: "Firebase",
+              logo: firebaseLogo,
+            },
+          ],
         },
         {
-          name: "Firebase",
-          logo: "../assets/firebase-logo.png",
-        },
-      ],
-      css: [
-        {
-          name: "Bootstrap",
-          logo: "../assets/bootstrap-logo.png",
-        },
-        {
-          name: "SaSS",
-          logo: "../assets/sass-logo.png",
-        },
-        {
-          name: "Tailwind",
-          logo: "../assets/tailwind-logo.png",
-        },
-        {
-          name: "MaterialUI",
-          logo: "../assets/materialui-logo.png",
-        },
-        {
-          name: "Vuetify",
-          logo: "../assets/vuetify-logo.png",
-        },
-      ],
-      tech: [
-        {
-          name: "REST",
-          logo: "../assets/rest-logo.png",
+          name: "Style frameworks",
+          skills: [
+            {
+              name: "Bootstrap",
+              logo: bootsrapLogo,
+            },
+            {
+              name: "SaSS",
+              logo: sassLogo,
+            },
+            {
+              name: "Tailwind",
+              logo: tailwindLogo,
+            },
+            {
+              name: "MaterialUI",
+              logo: materialuiLogo,
+            },
+            {
+              name: "Vuetify",
+              logo: vuetifyLogo,
+            },
+          ],
         },
         {
-          name: "GraphQL",
-          logo: "../assets/graphql-logo.png",
-        },
-        {
-          name: "WebSockets",
-          logo: "../assets/websockets-logo.png",
-        },
-        {
-          name: "Subscriptions",
-          logo: "../assets/subscriptions-logo.png",
+          name: "Other technologies",
+          skills: [
+            {
+              name: "REST",
+              logo: restLogo,
+            },
+            {
+              name: "GraphQL",
+              logo: graphqlLogo,
+            },
+            {
+              name: "WebSockets",
+              logo: websocketsLogo,
+            },
+            {
+              name: "Subscriptions",
+              logo: subscriptionsLogo,
+            },
+          ],
         },
       ],
     };
   },
 };
 </script>
+
+<style>
+@media (min-width: 0px) {
+  .skills-card-items {
+    flex-direction: column !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skills-card-items {
+    flex-direction: row !important;
+  }
+}
+</style>
