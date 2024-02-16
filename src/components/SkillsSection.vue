@@ -1,13 +1,38 @@
 <template>
   <section>
     <v-divider :thickness="3" class="border-opacity-25 ma-5"></v-divider>
-    <v-container id="skills">
-      <v-card class="d-flex justify-center ma-3">
-        <h1>Skills section</h1></v-card
+    <v-container
+      id="skills"
+      style="margin-top: 5rem !important; margin-bottom: 5rem !important"
+    >
+      <v-card
+        class="d-flex justify-center ma-4 pa-3"
+        style="background-color: rgba(0, 0, 0, 0.889)"
+      >
+        <h1
+          style="
+            background: linear-gradient(to top left, #ffff82 10%, #ff0030 90%);
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+          "
+        >
+          Skills section
+        </h1></v-card
       >
       <v-row no-gutters>
         <v-col cols="12" sm="12">
-          <v-col v-for="(skillGroup, index) in skills" :key="index">
+          <v-col
+            v-for="(skillGroup, index) in skills"
+            :key="index"
+            class="skill-section-container elevation-2"
+            style="
+              padding: 2rem;
+              margin: 2rem 1rem 2rem;
+              border-radius: 0.5rem;
+              max-width: calc(100% - 2rem);
+            "
+          >
             <div>
               <h1 class="d-flex justify-center">{{ skillGroup.name }}</h1>
             </div>
@@ -236,6 +261,11 @@ export default {
 </script>
 
 <style>
+.skill-section-container {
+  background: linear-gradient(to top left, #43434372 10%, #060606be 90%);
+  color: rgb(0, 0, 0);
+}
+
 @media (min-width: 0px) {
   .skills-card-items {
     flex-direction: column !important;

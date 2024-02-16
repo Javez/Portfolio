@@ -4,15 +4,31 @@
     :options="{ threshold: 0.5 }"
     transition="fade-transition"
   >
-    <section id="experience" style="padding: 2rem">
-      <div style="margin: 10rem 0 10rem !important">
-        <v-card class="d-flex justify-center my-10">
-          <h1>Experience section</h1>
-        </v-card>
-        <div
-          class="d-flex justify-center flex-row"
-          
+    <v-container id="experience">
+      <div style="margin-top: 5rem !important; margin-bottom: 5rem !important">
+        <v-card
+          class="d-flex justify-center"
+          style="
+            background-color: rgba(0, 0, 0, 0.889);
+            margin: 1rem 18.5rem 4rem;
+          "
         >
+          <h1
+            style="
+              background: linear-gradient(
+                to top left,
+                #ffff82 10%,
+                #ff0030 90%
+              );
+              -webkit-background-clip: text;
+              color: transparent;
+              display: inline-block;
+            "
+          >
+            Experience
+          </h1></v-card
+        >
+        <div class="d-flex justify-center flex-row">
           <div class="card-container">
             <v-card class="card-time" v-for="item in items" :key="item.title">
               <v-card-text>{{ item.text }}</v-card-text>
@@ -26,7 +42,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </v-container>
   </v-lazy>
 </template>
 
@@ -37,24 +53,24 @@ export default {
     return {
       items: [
         {
-          title: "Fullstack Developer - Upwork",
-          subtitle: "As a freelancer",
-          text: "01.02.2023 - 05.05.2023",
+          title: "Learning web tech stack at Udemy",
+          subtitle: "Self learning",
+          text: "Jan 2023 — Present",
         },
         {
-          title: "Fullstack Developer - Startup (Part Time)",
+          title: "Fullstack web developer at Upwork",
+          subtitle: "As a freelancer",
+          text: "Feb 2023 — Oct 2023",
+        },
+        {
+          title: "Web developer at BlockSolution",
           subtitle: "Contract individual entrepreneur",
-          text: "05.05.2023 - 05.07.2023",
+          text: "Nov 2023 — Dec 2023",
         },
         {
-          title: "Back-end Developer - Full Time",
-          subtitle: "Hired with Pioneer payment method",
-          text: "10.07.2023 - 10.09.2023",
-        },
-        {
-          title: "Upwork",
+          title: "Fullstack developer at Zahist",
           subtitle: "As a freelancer",
-          text: "23.09.2023 - Until now",
+          text: "Jan 2024 — Present",
         },
       ],
     };

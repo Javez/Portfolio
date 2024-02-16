@@ -1,20 +1,34 @@
 <template>
   <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
-    <section id="about-me" class="about-me-section">
-      <v-divider :thickness="3" class="border-opacity-25 ma-5"></v-divider>
+    <v-container
+      id="about-me"
+      class="about-me-section"
+      style="margin-top: 5rem !important; margin-bottom: 5rem !important"
+    >
       <v-card
-        class="section-card"
+        class="d-flex justify-center"
+        style="background-color: rgba(0, 0, 0, 0.889); margin: 2rem 0.5rem 3rem"
+      >
+        <h1
+          style="
+            background: linear-gradient(to top left, #ffff82 10%, #ff0030 90%);
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+          "
+        >
+          About
+        </h1></v-card
+      >
+      <v-card
+        class="section-card d-flex ma-2"
         style="
-          display: flex;
           flex-direction: column;
           padding: 1rem;
-          margin: 10rem;
           justify-content: center;
           align-items: center;
         "
       >
-        <div style="display: flex"><v-card-title>About Me</v-card-title></div>
-
         <div style="display: flex; flex-direction: column">
           <div
             class="about-me-first--part"
@@ -135,8 +149,9 @@
                 permanently located in Kyiv, in the very center of Ukraine.
               </v-card-text>
               <v-card-text>
-                At the core of my world are honesty, fairness and hard work.
-                I can adapt to any work time as well as work type (remote/office or hybrid).
+                At the core of my world are honesty, fairness and hard work. I
+                can adapt to any work time as well as work type (remote/office
+                or hybrid).
               </v-card-text>
               <v-card-text>
                 Feel free to write me your suggestions or follow me on LinkedIn.
@@ -148,14 +163,32 @@
         </div>
         <div style="display: flex">
           <v-card-actions
-            ><v-btn size="x-large" variant="outlined">Hire Me</v-btn
-            ><v-btn size="x-large" variant="outlined"
-              >Resume</v-btn
-            ></v-card-actions
-          >
+            ><v-btn
+              size="x-large"
+              variant="outlined"
+              style="
+                background: linear-gradient(
+                  to top left,
+                  #43434372 10%,
+                  #060606be 90%
+                );
+              "
+              ><v-icon start icon="mdi-linkedin"></v-icon>Hire Me </v-btn
+            ><v-btn
+              size="x-large"
+              variant="outlined"
+              style="
+                background: linear-gradient(
+                  to top left,
+                  #43434372 10%,
+                  #060606be 90%
+                );
+              "
+              >Resume<v-icon end icon="mdi-file-pdf-box"></v-icon></v-btn
+          ></v-card-actions>
         </div>
       </v-card>
-    </section>
+    </v-container>
   </v-lazy>
 </template>
 
