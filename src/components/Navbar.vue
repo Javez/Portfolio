@@ -32,7 +32,11 @@
           @click="toggleTheme"
           elevation="20"
         ></v-btn>
-        <v-btn class="v-toolbar-buttons_item" icon="mdi-web" elevation="20"></v-btn>
+        <v-btn
+          class="v-toolbar-buttons_item"
+          icon="mdi-web"
+          elevation="20"
+        ></v-btn>
       </section>
       <v-card class="v-toolbar-card">
         <v-layout class="v-toolbar-card_layout">
@@ -120,6 +124,8 @@ export default {
   align-items: center;
   margin: 0.5rem;
   width: 3rem;
+  box-shadow: 0px 6px 15px #2f2f2fb2;
+  border-radius: 0.3rem;
 }
 
 .v-toolbar-buttons_item {

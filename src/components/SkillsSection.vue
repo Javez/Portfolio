@@ -209,7 +209,7 @@ export default {
           ],
         },
         {
-          name: "Style frameworks",
+          name: "Style libs",
           skills: [
             {
               name: "Bootstrap",

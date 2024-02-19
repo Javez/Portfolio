@@ -7,11 +7,8 @@
     <v-container id="experience">
       <div style="margin-top: 5rem !important; margin-bottom: 5rem !important">
         <v-card
-          class="d-flex justify-center"
-          style="
-            background-color: rgba(0, 0, 0, 0.889);
-            margin: 1rem 18.5rem 4rem;
-          "
+          class="d-flex justify-center align-center"
+          style="background-color: rgba(0, 0, 0, 0.889)"
         >
           <h1
             style="
@@ -28,14 +25,41 @@
             Experience
           </h1></v-card
         >
+        <div style="padding: 4rem"></div>
         <div class="d-flex justify-center flex-row">
           <div class="card-container">
             <v-card class="card-time" v-for="item in items" :key="item.title">
+              <div
+                class="circles"
+                style="
+                  position: absolute;
+                  border-radius: 5px;
+                  width: 1rem;
+                  height: 1rem;
+                  right: -0.55rem;
+                  top: 1.6rem;
+                  background-color: black;
+                  box-shadow: 0px 6px 15px #2f2f2fb2;
+                "
+              ></div>
               <v-card-text>{{ item.text }}</v-card-text>
             </v-card>
           </div>
-          <div class="card-container">
+          <div class="card-container" style="border-left: solid 0.4rem black">
             <v-card class="card-job" v-for="item in items" :key="item.title">
+              <div
+                class="circles"
+                style="
+                  position: absolute;
+                  border-radius: 5px;
+                  width: 1rem;
+                  height: 1rem;
+                  left: -0.6rem;
+                  top: 1.6rem;
+                  background-color: black;
+                  box-shadow: 0px 6px 15px #2f2f2fb2;
+                "
+              ></div>
               <v-card-title>{{ item.title }}</v-card-title>
               <v-card-subtitle>{{ item.subtitle }}</v-card-subtitle>
             </v-card>
@@ -69,7 +93,7 @@ export default {
         },
         {
           title: "Fullstack developer at Zahist",
-          subtitle: "As a freelancer",
+          subtitle: "Simple employment",
           text: "Jan 2024 — Present",
         },
       ],
